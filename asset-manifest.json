@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ability-bar-builder/static/css/main.fa83aa7b.css",
+    "main.js": "/ability-bar-builder/static/js/main.c51a35e8.js",
+    "index.html": "/ability-bar-builder/index.html",
+    "main.fa83aa7b.css.map": "/ability-bar-builder/static/css/main.fa83aa7b.css.map",
+    "main.c51a35e8.js.map": "/ability-bar-builder/static/js/main.c51a35e8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa83aa7b.css",
+    "static/js/main.c51a35e8.js"
+  ]
+}
