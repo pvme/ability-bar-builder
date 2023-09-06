@@ -17,7 +17,8 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Ability Bar Builder</h2>
+      <h2 className="App-h2">Ability Bar Builder</h2>
+      <a className="App-credit" href="https://github.com/nullopt/ability-bar-builder">Original code by nullopt</a>
       <header className="App-header">
         <FormGroup
           style={{

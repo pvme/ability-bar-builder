@@ -6,6 +6,7 @@ import {
   DefensiveAbilities,
   MageAbilities,
   MeleeAbilities,
+  NecromancyAbilities,
   RangeAbilities,
 } from "../../data/ability-icons";
 import { useStickyState } from "../../hooks/useStickyState";
@@ -36,6 +37,10 @@ export interface AbilitySlot {
 }
 
 const abilityStyles: AbilityStyle[] = [
+  {
+    icon: "https://runescape.wiki/images/Necromancy.png",
+    abilities: NecromancyAbilities,
+  },
   {
     icon: "https://runescape.wiki/images/Attack.png",
     abilities: MeleeAbilities,
@@ -144,7 +149,7 @@ export const AbilityBarContainer = ({
             flexWrap: "wrap",
             justifyContent: "center",
             alignItems: "center",
-            width: "350px",
+            width: "391px",
             backgroundImage: `url(${BackgroundImage})`,
           }}
         >
