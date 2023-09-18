@@ -2,12 +2,12 @@ import { useState } from "react";
 import Popover from "@mui/material/Popover";
 import { RemoveCircleOutline } from "@mui/icons-material";
 import {
-  ConstitutionAbilities,
-  DefensiveAbilities,
-  MageAbilities,
   MeleeAbilities,
-  NecromancyAbilities,
   RangeAbilities,
+  MageAbilities,
+  NecromancyAbilities,
+  DefensiveAbilities,
+  ConstitutionAbilities
 } from "../../data/ability-icons";
 import { useStickyState } from "../../hooks/useStickyState";
 import { AbilityCell } from "../AbilityCell";
@@ -38,20 +38,8 @@ export interface AbilitySlot {
 
 const abilityStyles: AbilityStyle[] = [
   {
-    icon: "https://runescape.wiki/images/Necromancy.png",
-    abilities: NecromancyAbilities,
-  },
-  {
     icon: "https://runescape.wiki/images/Attack.png",
     abilities: MeleeAbilities,
-  },
-  {
-    icon: "https://runescape.wiki/images/Defence.png",
-    abilities: DefensiveAbilities,
-  },
-  {
-    icon: "https://runescape.wiki/images/Constitution.png",
-    abilities: ConstitutionAbilities,
   },
   {
     icon: "https://runescape.wiki/images/Ranged.png",
@@ -61,6 +49,18 @@ const abilityStyles: AbilityStyle[] = [
     icon: "https://runescape.wiki/images/Magic.png",
     abilities: MageAbilities,
   },
+  {
+    icon: "https://runescape.wiki/images/Necromancy.png",
+    abilities: NecromancyAbilities,
+  },
+  {
+    icon: "https://runescape.wiki/images/Defence.png",
+    abilities: DefensiveAbilities,
+  },
+  {
+    icon: "https://runescape.wiki/images/Constitution.png",
+    abilities: ConstitutionAbilities,
+  }
 ];
 
 const SelectableAbilityIcon = ({
