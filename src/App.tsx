@@ -46,6 +46,7 @@ function App() {
                 onChange={(event: Event, value: number | number[]) => {
                   if (value as Number) {
                     setActionBarLength(value as number);
+                    setrevoBarLength(value as number);
                   }
                 }}
               />
