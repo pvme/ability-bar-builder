@@ -19,6 +19,7 @@ interface AbilityBarContainerProps {
   revo?: boolean;
   barNumbers: boolean;
   slotCount: number;
+  revoSlotCount: number;
 }
 
 interface SelectableAbilityIconProps {
@@ -81,6 +82,7 @@ export const AbilityBarContainer = ({
   revo,
   barNumbers,
   slotCount,
+  revoSlotCount,
 }: AbilityBarContainerProps) => {
   const [slots, setSlots] = useStickyState<AbilitySlot[]>(
     new Array<AbilitySlot>(slotCount).fill({}),
@@ -115,8 +117,14 @@ export const AbilityBarContainer = ({
     handleClose();
   };
 
+
+  const revoBorderWidth = (67 * revoSlotCount - 5)
+
   return (
-    <div className={`ability-bar-container ${revo ? "revo" : "manual"}`}>
+    <div className={`ability-bar-container ${revo ? "revo" : "manual"}`} >
+      
+      <div className={`revo-border`} style={{ width: revoBorderWidth.toString() + "px" }} />
+
       {slots.slice(0, slotCount).map((slot, index) => (
         <AbilityCell
           key={index}
@@ -126,6 +134,7 @@ export const AbilityBarContainer = ({
           onClick={handleClick}
         />
       ))}
+
 
       <Popover
         id={id}
