@@ -8,13 +8,17 @@
   padding: 4px;
 }
 
-.revo:after {
-  display: block;
-  content: "";
+.revo-border {
+  display: none;
   position:absolute;
+  pointer-events: none;
   left: 0;
   top: 0;
-  width: calc((60px * 2) + (4px * 2));
+  width: calc(67px * 14 - 5px);
   height: 62px;
   border: 4px solid #ffcb05;
+}
+
+.revo .revo-border {
+  display: block;
 }

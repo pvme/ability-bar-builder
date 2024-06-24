@@ -12,6 +12,7 @@ function App() {
   const [revo, setRevo] = useState<boolean>(true);
   const [barNumbers, setBarNumbers] = useState<boolean>(true);
   const [actionBarLength, setActionBarLength] = useState<number>(14);
+  const [revoBarLength, setrevoBarLength] = useState<number>(14);
 
   const exportRef = useRef<HTMLDivElement>(null);
 
@@ -52,6 +53,27 @@ function App() {
             label="Action Bar Length"
           />
           <FormControlLabel
+            style={{ width: 500 }}
+            labelPlacement="top"
+            control={
+              <PrettoSlider
+                aria-label="Revolution Bar Length"
+                value={revoBarLength}
+                valueLabelDisplay="auto"
+                step={1}
+                marks
+                min={1}
+                max={actionBarLength}
+                onChange={(event: Event, value: number | number[]) => {
+                  if (value as Number) {
+                    setrevoBarLength(value as number);
+                  }
+                }}
+              />
+            }
+            label="Revolution Bar Length"
+          />
+          <FormControlLabel
             labelPlacement="start"
             control={
               <Switch
@@ -75,7 +97,7 @@ function App() {
           />
         </FormGroup>
         <div ref={exportRef} style={{ backgroundColor: "#282c34" }}>
-          <AbilityBarContainer revo={revo} barNumbers={barNumbers} slotCount={actionBarLength} />
+          <AbilityBarContainer revo={revo} barNumbers={barNumbers} slotCount={actionBarLength} revoSlotCount={revoBarLength} />
         </div>
         <Button
           style={{ marginTop: 15 }}
