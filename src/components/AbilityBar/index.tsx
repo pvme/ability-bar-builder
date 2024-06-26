@@ -6,6 +6,7 @@ import {
   RangeAbilities,
   MageAbilities,
   NecromancyAbilities,
+  NecromancyIncantations,
   DefensiveAbilities,
   ConstitutionAbilities
 } from "../../data/ability-icons";
@@ -53,6 +54,10 @@ const abilityStyles: AbilityStyle[] = [
   {
     icon: "https://runescape.wiki/images/Necromancy.png",
     abilities: NecromancyAbilities,
+  },
+  {
+    icon: "https://runescape.wiki/images/Incantations_icon.png",
+    abilities: NecromancyIncantations,
   },
   {
     icon: "https://runescape.wiki/images/Defence.png",
@@ -158,7 +163,7 @@ export const AbilityBarContainer = ({
             flexWrap: "wrap",
             justifyContent: "center",
             alignItems: "center",
-            width: "391px",
+            width: "448px",
             backgroundImage: `url(${BackgroundImage})`,
           }}
         >
