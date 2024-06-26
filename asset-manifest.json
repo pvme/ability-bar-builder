@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ability-bar-builder/static/css/main.0ab741ad.css",
-    "main.js": "/ability-bar-builder/static/js/main.202260cd.js",
+    "main.js": "/ability-bar-builder/static/js/main.d45a8662.js",
     "index.html": "/ability-bar-builder/index.html",
     "main.0ab741ad.css.map": "/ability-bar-builder/static/css/main.0ab741ad.css.map",
-    "main.202260cd.js.map": "/ability-bar-builder/static/js/main.202260cd.js.map"
+    "main.d45a8662.js.map": "/ability-bar-builder/static/js/main.d45a8662.js.map"
   },
   "entrypoints": [
     "static/css/main.0ab741ad.css",
-    "static/js/main.202260cd.js"
+    "static/js/main.d45a8662.js"
   ]
 }
