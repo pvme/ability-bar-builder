@@ -25,7 +25,7 @@ export const MeleeAbilities: string[] = [
   "https://cdn.discordapp.com/emojis/959089455640215633.png", //igneous overpower
   "https://cdn.discordapp.com/emojis/535532879053062146.png", //pulverise
   "https://cdn.discordapp.com/emojis/535532854004678657.png", //berserk
-  "https://img.pvme.io/images/XpxfNqYtLh.png", //meteor strike
+  "https://img.pvme.io/images/81HMxObool.webp", //meteor strike
   "https://cdn.discordapp.com/emojis/1049378668197195808.png", //dive
   "https://cdn.discordapp.com/emojis/535532854281764884.png", //bladed dive 
 ];
