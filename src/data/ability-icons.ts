@@ -5,129 +5,85 @@
 export const BlankAbility = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA5CAIAAAADehTSAAAAR0lEQVRo3u3OAQkAQAgEMDXI9Y/5KUQetgTrJPWJuQ64nnN1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV13fEAJIYAzN96k+EAAAAASUVORK5CYII=";
 
 export const MeleeAbilities: string[] = [
- "https://cdn.discordapp.com/emojis/535532879594258432.png", //slice
- "https://cdn.discordapp.com/emojis/867678153757294673.png", //slice energising
- "https://cdn.discordapp.com/emojis/535532854302605333.png", //backhand
- "https://cdn.discordapp.com/emojis/867678153854025779.png", //backhand flanking
- "https://cdn.discordapp.com/emojis/535532879237873666.png", //slaughter
- "https://cdn.discordapp.com/emojis/535532879334080517.png", //overpower
- "https://cdn.discordapp.com/emojis/959089455640215633.png", //igneous overpower
- "https://cdn.discordapp.com/emojis/1217207450273448137.png", //lesser havoc
- "https://cdn.discordapp.com/emojis/535532879300526080.png", //havoc
- "https://cdn.discordapp.com/emojis/994920849117282365.png", //GoP havoc
- "https://cdn.discordapp.com/emojis/535532879346794516.png", //forceful backhand
- "https://cdn.discordapp.com/emojis/867678153866870824.png", //forceful backhand flanking
- "https://cdn.discordapp.com/emojis/1217207451536068628.png", //lesser smash
- "https://cdn.discordapp.com/emojis/535532879820619786.png", //smash
- "https://cdn.discordapp.com/emojis/994929821727604808.png", //GoP smash
- "https://cdn.discordapp.com/emojis/535532853916860437.png", //barge
- "https://cdn.discordapp.com/emojis/535532879250456578.png", //greater barge
- "https://cdn.discordapp.com/emojis/864492981763702834.png", //flurry
- "https://cdn.discordapp.com/emojis/535532879283879977.png", //greater flurry
- "https://img.pvme.io/images/68JIaYZjGt.png", //lesser sever
- "https://cdn.discordapp.com/emojis/535532879577612298.png", //sever
- "https://cdn.discordapp.com/emojis/535532878969438210.png", //hurricane
- "https://cdn.discordapp.com/emojis/1049378668197195808.png", //dive
- "https://cdn.discordapp.com/emojis/535532854281764884.png", //bladed dive
- "https://cdn.discordapp.com/emojis/535532879384543253.png", //massacre
- "https://cdn.discordapp.com/emojis/535532854327640064.png", //blood tendrils
- "https://cdn.discordapp.com/emojis/535532879359377439.png", //meteor strike
- "https://cdn.discordapp.com/emojis/535532854336290826.png", //balanced strike
- "https://cdn.discordapp.com/emojis/535532879132885025.png", //kick
- "https://cdn.discordapp.com/emojis/535532879552315412.png", //stomp
- "https://cdn.discordapp.com/emojis/535532879439069184.png", //punish
- "https://img.pvme.io/images/Gw3NICHbET.png", //lesser dismember
- "https://cdn.discordapp.com/emojis/535532879376023572.png", //dismember
- "https://cdn.discordapp.com/emojis/867678153899769876.png", //dismember lunging
- "https://cdn.discordapp.com/emojis/535532879510372352.png", //fury
- "https://cdn.discordapp.com/emojis/535532879334080527.png", //greater fury
- "https://cdn.discordapp.com/emojis/535532879506309150.png", //quake
- "https://cdn.discordapp.com/emojis/535532879330148352.png", //destroy
- "https://cdn.discordapp.com/emojis/535532854004678657.png", //berserk
- "https://cdn.discordapp.com/emojis/535532878616985610.png", //cleave
- "https://cdn.discordapp.com/emojis/535532855191928842.png", //assault
- "https://cdn.discordapp.com/emojis/535532879325822986.png", //decimate
- "https://cdn.discordapp.com/emojis/535532879053062146.png", //pulverise
- "https://cdn.discordapp.com/emojis/535532879279554581.png", //frenzy
- "https://cdn.discordapp.com/emojis/994644356671737966.png", //chaos roar
+  "https://img.pvme.io/images/FLBzCBbLxz.webp", //melee basic
+  "https://img.pvme.io/images/OKgWLQZr6u.webp", //adaptive strike
+  "https://cdn.discordapp.com/emojis/535532879820619786.png", //rend
+  "https://cdn.discordapp.com/emojis/535532879510372352.png", //fury
+  "https://cdn.discordapp.com/emojis/535532879334080527.png", //greater fury
+  "https://cdn.discordapp.com/emojis/535532854302605333.png", //backhand
+  "https://cdn.discordapp.com/emojis/867678153854025779.png", //backhand flanking
+  "https://cdn.discordapp.com/emojis/535532879439069184.png", //punish
+  "https://cdn.discordapp.com/emojis/535532853916860437.png", //barge
+  "https://cdn.discordapp.com/emojis/535532879250456578.png", //greater barge
+  "https://img.pvme.io/images/SBxKhzUNKE.webp", //chaos roar
+  "https://cdn.discordapp.com/emojis/535532855191928842.png", //assault
+  "https://cdn.discordapp.com/emojis/535532878969438210.png", //hurricane
+  "https://cdn.discordapp.com/emojis/864492981763702834.png", //flurry
+  "https://cdn.discordapp.com/emojis/535532879283879977.png", //greater flurry
+  "https://img.pvme.io/images/qPRMFCsp23.webp", //dismember
+  "https://cdn.discordapp.com/emojis/535532879334080517.png", //overpower
+  "https://cdn.discordapp.com/emojis/959089455640215633.png", //igneous overpower
+  "https://cdn.discordapp.com/emojis/535532879053062146.png", //pulverise
+  "https://cdn.discordapp.com/emojis/535532854004678657.png", //berserk
+  "https://cdn.discordapp.com/emojis/535532879359377439.png", //meteor strike
+  "https://cdn.discordapp.com/emojis/1049378668197195808.png", //dive
+  "https://cdn.discordapp.com/emojis/535532854281764884.png", //bladed dive 
 ];
 
 export const RangeAbilities: string[] = [
- "https://cdn.discordapp.com/emojis/535541258538450944.png", //piercing shot
- "https://cdn.discordapp.com/emojis/867678153979854868.png", //piercing energising
- "https://cdn.discordapp.com/emojis/535541306563231790.png", //binding shot
- "https://cdn.discordapp.com/emojis/867678153400647701.png", //binding shot flanking
- "https://cdn.discordapp.com/emojis/535534127131394088.png", //snapshot
- "https://cdn.discordapp.com/emojis/535541307666595870.png", //deadshot
- "https://cdn.discordapp.com/emojis/959089455283728386.png", //igneous deadshot
- "https://cdn.discordapp.com/emojis/535541275957657600.png", //tight bindings
- "https://cdn.discordapp.com/emojis/867678154096640010.png", //tight bindings flanking
- "https://cdn.discordapp.com/emojis/535541258832052231.png", //escape
- "https://img.pvme.io/images/6ngWADmB3G.png", //lesser snipe
- "https://cdn.discordapp.com/emojis/535541258425204770.png", //snipe
- "https://cdn.discordapp.com/emojis/1217207447748608131.png", //lesser dazing shot
- "https://cdn.discordapp.com/emojis/535541307142307860.png", //dazing shot
- "https://cdn.discordapp.com/emojis/535541259033378827.png", //greater dazing shot
- "https://cdn.discordapp.com/emojis/535541258559553546.png", //demoralise
- "https://cdn.discordapp.com/emojis/1217207449082138636.png", //lesser needle strike
- "https://cdn.discordapp.com/emojis/535541259108876293.png", //needle strike
- "https://cdn.discordapp.com/emojis/535541259268521994.png", //rout
- "https://img.pvme.io/images/2bhb8VCjrN.png", //lesser fragmentation shot
- "https://cdn.discordapp.com/emojis/535541273755385885.png", //fragmentation shot
- "https://cdn.discordapp.com/emojis/867678154021273600.png", //fragmentation shot lunging
- "https://cdn.discordapp.com/emojis/535541270521708566.png", //rapid fire
- "https://cdn.discordapp.com/emojis/535541259566186521.png", //ricochet
- "https://cdn.discordapp.com/emojis/867678153635004447.png", //ricochet caroming
- "https://cdn.discordapp.com/emojis/787904334812807238.png", //greater ricochet
- "https://cdn.discordapp.com/emojis/867678153966878740.png", //greater ricochet caroming
- "https://cdn.discordapp.com/emojis/535541306391265284.png", //bombardment
- "https://cdn.discordapp.com/emojis/535541259109138463.png", //salt the wound
- "https://cdn.discordapp.com/emojis/535541258429661215.png", //incendiary shot
- "https://cdn.discordapp.com/emojis/535541306294796299.png", //corruption shot
- "https://cdn.discordapp.com/emojis/642713547142332416.png", //shadow tendrils
- "https://cdn.discordapp.com/emojis/535541258664411169.png", //unload
- "https://cdn.discordapp.com/emojis/994921434633744455.png", //deaths swiftness
- "https://cdn.discordapp.com/emojis/994644354536837121.png", //greater death swiftness
+  "https://img.pvme.io/images/HAc5xYqGUV.webp", //ranged basic
+  "https://img.pvme.io/images/y8dBjmQZSJ.webp", //piercing shot
+  //need updated"https://cdn.discordapp.com/emojis/867678153979854868.png", //piercing energising
+  "https://cdn.discordapp.com/emojis/535541306563231790.png", //binding shot
+  "https://cdn.discordapp.com/emojis/867678153400647701.png", //binding shot flanking
+  "https://img.pvme.io/images/YeiRAAxXYB.webp", //imbue gale
+  "https://img.pvme.io/images/hQduTi7o4o.webp", //ricochet
+  //need updated"https://cdn.discordapp.com/emojis/867678153635004447.png", //ricochet caroming
+  "https://cdn.discordapp.com/emojis/787904334812807238.png", //greater ricochet
+  "https://cdn.discordapp.com/emojis/867678153966878740.png", //greater ricochet caroming
+  "https://img.pvme.io/images/WHTscLhdbk.webp", //snapshot
+  "https://img.pvme.io/images/ouNQwWo9MM.webp", //snipe
+  "https://cdn.discordapp.com/emojis/535541306391265284.png", //bombardment
+  "https://cdn.discordapp.com/emojis/535541270521708566.png", //rapid fire
+  "https://cdn.discordapp.com/emojis/642713547142332416.png", //shadow tendrils
+  "https://cdn.discordapp.com/emojis/535541306294796299.png", //corruption shot
+  "https://img.pvme.io/images/INpvAsW5Jc.webp", //imbue shadows
+  "https://img.pvme.io/images/LLYuG5lgRv.webp", //deadshot
+  //need updated"https://cdn.discordapp.com/emojis/959089455283728386.png", //igneous deadshot
+  "https://img.pvme.io/images/M35wETJU2P.webp", //deaths swiftness
+  "https://cdn.discordapp.com/emojis/994644354536837121.png", //greater death swiftness
+  "https://cdn.discordapp.com/emojis/535541258832052231.png", //escape
 ];
 
 export const MageAbilities: string[] = [
- "https://cdn.discordapp.com/emojis/1257439366708592651.png", //wrack
- "https://cdn.discordapp.com/emojis/867678153429221387.png", //wrack energising
+  "https://img.pvme.io/images/a51JSKPdfz.webp", //magic basic
+ "https://img.pvme.io/images/Ct4XTMUwZZ.webp", //sonic wave
+ "https://img.pvme.io/images/zxtNbofl8y.webp", //greater sonic wave
+ "https://cdn.discordapp.com/emojis/535533833391702017.png", //dragon breath
  "https://cdn.discordapp.com/emojis/535533809655873556.png", //impact
  "https://cdn.discordapp.com/emojis/867678154369400862.png", //impact flanking
- "https://cdn.discordapp.com/emojis/535533833072672778.png", //asphyxiate
- "https://cdn.discordapp.com/emojis/535533809664262179.png", //omnipower
- "https://cdn.discordapp.com/emojis/1179505745654448208.png", //igneous omnipower
- "https://cdn.discordapp.com/emojis/535533833139912724.png", //deep impact
- "https://cdn.discordapp.com/emojis/867678153611018261.png", //deep impact flanking
- "https://img.pvme.io/images/PeLwTLyXYc.png", //lesser dragon breath
- "https://cdn.discordapp.com/emojis/535533833391702017.png", //dragon breath
- "https://cdn.discordapp.com/emojis/1217207446225813555.png", //lesser sonic wave
- "https://cdn.discordapp.com/emojis/1087373972443775056.png", //sonic wave
- "https://cdn.discordapp.com/emojis/1095411826839257138.png", //greater sonic wave
- "https://cdn.discordapp.com/emojis/535533809932697610.png", //shock
- "https://cdn.discordapp.com/emojis/1217207445101744189.png", //lesser concentrated blast
- "https://cdn.discordapp.com/emojis/1087373968731811880.png", //concentrated blast
- "https://cdn.discordapp.com/emojis/869285393223254107.png", //greater concentrated blast
- "https://cdn.discordapp.com/emojis/535533833261547520.png", //horror
- "https://img.pvme.io/images/MomNLyugX9.png", //lesser combust
- "https://cdn.discordapp.com/emojis/535533833098100745.png", //combust
- "https://cdn.discordapp.com/emojis/867678153992437790.png", //combust lunging
- "https://cdn.discordapp.com/emojis/535533833358016512.png", //detonate
- "https://cdn.discordapp.com/emojis/1257440203401068566.png", //chain
+ "https://img.pvme.io/images/W5h1lGupxA.webp", //combust
+ //need updated"https://cdn.discordapp.com/emojis/867678153992437790.png", //combust lunging
+ "https://img.pvme.io/images/82PXXSsEWB.webp", //chain
  "https://cdn.discordapp.com/emojis/867678153962684426.png", //chain caroming
- "https://cdn.discordapp.com/emojis/1257440278512537740.png", //greater chain
+ "https://img.pvme.io/images/0w0DrNzSRH.webp", //greater chain
  "https://cdn.discordapp.com/emojis/867678153882861568.png", //greater chain caroming
+ "https://img.pvme.io/images/qcvRxP2Sy7.webp", //concentrated blast
+ "https://img.pvme.io/images/vQl3485ZuQ.webp", //greater concentrated blast
  "https://cdn.discordapp.com/emojis/535533809978966037.png", //wild magic
- "https://cdn.discordapp.com/emojis/535533811304497183.png", //metamorphosis
+ "https://cdn.discordapp.com/emojis/535533833072672778.png", //asphyxiate
+ "https://cdn.discordapp.com/emojis/536257336130404372.png", //smoke tendrils
  "https://cdn.discordapp.com/emojis/924741973858996284.png", //magma tempest targeted
  "https://cdn.discordapp.com/emojis/902209626509025290.png", //magma tempest
- "https://cdn.discordapp.com/emojis/513190159194259467.png", //corruption blast
- "https://cdn.discordapp.com/emojis/536257336130404372.png", //smoke tendrils
+ "https://img.pvme.io/images/JkOw1LoeZj.webp", //corruption blast
+ "https://cdn.discordapp.com/emojis/535533809664262179.png", //omnipower
+ "https://cdn.discordapp.com/emojis/1179505745654448208.png", //igneous omnipower
+ "https://cdn.discordapp.com/emojis/994921119381463070.png", //sunshine
+ "https://cdn.discordapp.com/emojis/994644352871714836.png", //greater sunshine
  "https://cdn.discordapp.com/emojis/535533809995874304.png", //tsunami
  "https://cdn.discordapp.com/emojis/958989794757730307.png", //tsunami incite
- "https://cdn.discordapp.com/emojis/994921119381463070.png", //sunshine
- "https://cdn.discordapp.com/emojis/994644352871714836.png", // greater sunshine
+ "https://cdn.discordapp.com/emojis/799457167182659586.png", //surge
+ "https://img.pvme.io/images/9hZoj9PK9n.webp", //runic charge
 ];
 
 export const NecromancyAbilities: string[] = [
