@@ -1,7 +1,3 @@
-// grico is shit quality, cache only has a 30x30
-// that's on line 126 if you find a better one
-// cease is also 30x30 on linenumhere
-
 export const BlankAbility = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA5CAIAAAADehTSAAAAR0lEQVRo3u3OAQkAQAgEMDXI9Y/5KUQetgTrJPWJuQ64nnN1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV13fEAJIYAzN96k+EAAAAASUVORK5CYII=";
 
 export const MeleeAbilities: string[] = [
