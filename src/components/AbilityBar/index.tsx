@@ -27,6 +27,8 @@ interface SelectableAbilityIconProps {
   index: number;
   imgUrl: string;
   onClick: (event: React.MouseEvent<HTMLImageElement>) => void;
+  onDragStart: (imgUrl: string, event: React.DragEvent<HTMLImageElement>) => void;
+  onDragEnd: () => void;
 }
 
 interface AbilityStyle {
@@ -37,6 +39,17 @@ interface AbilityStyle {
 export interface AbilitySlot {
   imgUrl?: string;
 }
+
+type DraggedAbility =
+  | {
+      source: "palette";
+      imgUrl: string;
+    }
+  | {
+      source: "bar";
+      index: number;
+      imgUrl: string;
+    };
 
 const abilityStyles: AbilityStyle[] = [
   {
@@ -73,13 +86,18 @@ const SelectableAbilityIcon = ({
   index,
   imgUrl,
   onClick,
+  onDragStart,
+  onDragEnd,
 }: SelectableAbilityIconProps) => (
   <img
     key={index}
     src={imgUrl}
     alt=""
-    style={{ width: 40, height: 40, margin: 8, cursor: "pointer" }}
+    className="selectable-ability-icon"
+    draggable
     onClick={onClick}
+    onDragStart={(event) => onDragStart(imgUrl, event)}
+    onDragEnd={onDragEnd}
   />
 );
 
@@ -90,11 +108,15 @@ export const AbilityBarContainer = ({
   revoSlotCount,
 }: AbilityBarContainerProps) => {
   const [slots, setSlots] = useStickyState<AbilitySlot[]>(
-    new Array<AbilitySlot>(slotCount).fill({}),
+    Array.from({ length: slotCount }, () => ({})),
     "slots"
   );
   const [activeSelection, setActiveSelection] =
     useState<string[]>(MeleeAbilities);
+  const [draggedAbility, setDraggedAbility] = useState<DraggedAbility | null>(
+    null
+  );
+  const [dropTargetIndex, setDropTargetIndex] = useState<number | null>(null);
 
   const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
 
@@ -122,21 +144,127 @@ export const AbilityBarContainer = ({
     handleClose();
   };
 
+  const handlePaletteDragStart = (
+    imgUrl: string,
+    event: React.DragEvent<HTMLImageElement>
+  ) => {
+    setDraggedAbility({ source: "palette", imgUrl });
+    event.dataTransfer.effectAllowed = "copy";
+    event.dataTransfer.setData("text/plain", imgUrl);
+  };
+
+  const handleBarDragStart = (
+    index: number,
+    event: React.DragEvent<HTMLDivElement>
+  ) => {
+    const imgUrl = slots[index]?.imgUrl;
+
+    if (!imgUrl) {
+      event.preventDefault();
+      return;
+    }
+
+    setDraggedAbility({ source: "bar", index, imgUrl });
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", imgUrl);
+  };
+
+  const handleDragEnd = () => {
+    setDraggedAbility(null);
+    setDropTargetIndex(null);
+  };
+
+  const handleDragEnter = (index: number) => {
+    if (draggedAbility) {
+      setDropTargetIndex(index);
+    }
+  };
+
+  const handleDragLeave = (index: number) => {
+    setDropTargetIndex((currentIndex) =>
+      currentIndex === index ? null : currentIndex
+    );
+  };
+
+  const handleDragOver = (
+    index: number,
+    event: React.DragEvent<HTMLDivElement>
+  ) => {
+    if (!draggedAbility) {
+      return;
+    }
+
+    event.preventDefault();
+    event.dataTransfer.dropEffect =
+      draggedAbility.source === "palette" ? "copy" : "move";
+    setDropTargetIndex(index);
+  };
+
+  const handleDrop = (
+    dropIndex: number,
+    event: React.DragEvent<HTMLDivElement>
+  ) => {
+    event.preventDefault();
+
+    if (!draggedAbility) {
+      return;
+    }
+
+    setSlots((currentSlots) => {
+      const nextSlots = [...currentSlots];
+
+      while (nextSlots.length < slotCount) {
+        nextSlots.push({});
+      }
+
+      if (draggedAbility.source === "palette") {
+        nextSlots[dropIndex] = { imgUrl: draggedAbility.imgUrl };
+        return nextSlots;
+      }
+
+      const dragIndex = draggedAbility.index;
+
+      if (dragIndex === dropIndex) {
+        return nextSlots;
+      }
+
+      const draggedSlot = { ...nextSlots[dragIndex] };
+      nextSlots[dragIndex] = { ...nextSlots[dropIndex] };
+      nextSlots[dropIndex] = draggedSlot;
+      return nextSlots;
+    });
+
+    handleDragEnd();
+  };
 
   const revoBorderWidth = (67 * revoSlotCount - 5)
+  const visibleSlots = Array.from(
+    { length: slotCount },
+    (_, index) => slots[index] ?? {}
+  );
 
   return (
-    <div className={`ability-bar-container ${revo ? "revo" : "manual"}`} >
+    <div className={`ability-bar-container ${revo ? "revo" : "manual"} ${draggedAbility ? "is-dragging-ability" : ""}`} >
       
       <div className={`revo-border`} style={{ width: revoBorderWidth.toString() + "px" }} />
 
-      {slots.slice(0, slotCount).map((slot, index) => (
+      {visibleSlots.map((slot, index) => (
         <AbilityCell
           key={index}
           index={index}
           drawBarNumbers={barNumbers}
           slot={slot}
           onClick={handleClick}
+          onDragStart={handleBarDragStart}
+          onDragEnd={handleDragEnd}
+          onDragEnter={handleDragEnter}
+          onDragLeave={handleDragLeave}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
+          isDragging={
+            draggedAbility?.source === "bar" && draggedAbility.index === index
+          }
+          isDragTarget={dropTargetIndex === index}
         />
       ))}
 
@@ -146,7 +274,10 @@ export const AbilityBarContainer = ({
         open={open()}
         anchorEl={anchorEl}
         onClose={handleClose}
-        style={{ borderRadius: 0 }}
+        style={{ borderRadius: 0, pointerEvents: "none" }}
+        PaperProps={{
+          style: { pointerEvents: "auto" },
+        }}
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "center",
@@ -217,6 +348,8 @@ export const AbilityBarContainer = ({
                 index={index}
                 imgUrl={ability}
                 onClick={() => swapAbility(ability)}
+                onDragStart={handlePaletteDragStart}
+                onDragEnd={handleDragEnd}
               />
             ))}
           </div>

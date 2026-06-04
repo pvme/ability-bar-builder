@@ -8,6 +8,31 @@
   padding: 4px;
 }
 
+.ability-bar-container.is-dragging-ability .cell-container {
+  cursor: copy;
+}
+
+.ability-bar-container.is-dragging-ability .cell-container.is-dragging {
+  cursor: grabbing;
+}
+
+.selectable-ability-icon {
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  cursor: grab;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+.selectable-ability-icon:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+.selectable-ability-icon:active {
+  cursor: grabbing;
+}
+
 .revo-border {
   display: none;
   position:absolute;

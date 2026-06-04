@@ -6,6 +6,24 @@
   background-color: #090e11;
   border: 1px solid #30414b;
   cursor: pointer;
+  transition: border-color 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.cell-container.has-ability {
+  cursor: grab;
+}
+
+.cell-container.has-ability:active {
+  cursor: grabbing;
+}
+
+.cell-container.is-dragging {
+  opacity: 0.45;
+}
+
+.cell-container.is-drag-target {
+  border-color: #6df4ff;
+  box-shadow: inset 0 0 0 2px #6df4ff, 0 0 12px rgba(109, 244, 255, 0.8);
 }
 
 .cell-container:not(:last-child) {
