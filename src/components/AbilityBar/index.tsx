@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Popover from "@mui/material/Popover";
 import { RemoveCircleOutline } from "@mui/icons-material";
 import {
@@ -119,8 +119,14 @@ export const AbilityBarContainer = ({
   const [dropTargetIndex, setDropTargetIndex] = useState<number | null>(null);
 
   const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
+  const selectorPopupRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (anchorEl === event.currentTarget) {
+      handleClose();
+      return;
+    }
+
     setAnchorEl(event.currentTarget);
   };
 
@@ -130,6 +136,29 @@ export const AbilityBarContainer = ({
 
   const open = () => Boolean(anchorEl);
   const id = open() ? "simple-popover" : undefined;
+
+  useEffect(() => {
+    if (!anchorEl) {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      const target = event.target as Node | null;
+
+      if (target && selectorPopupRef.current?.contains(target)) {
+        return;
+      }
+
+      setAnchorEl(null);
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown, true);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown, true);
+    };
+  }, [anchorEl]);
+
 
   const swapAbility = (imgUrl?: string) => {
     if (!anchorEl) {
@@ -288,6 +317,7 @@ export const AbilityBarContainer = ({
         }}
       >
         <div
+          ref={selectorPopupRef}
           style={{
             display: "flex",
             flexDirection: "row",
